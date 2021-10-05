@@ -11,18 +11,45 @@ const btn = document.querySelector(".btn1")
 
 const h1 = document.querySelector(".h1");
 
+
+let cs = '50'
+const currntScore = document.querySelector('.cs');
+const HighScore = document.querySelector('.hs');
+
+currntScore.innerHTML = `Current Score:${cs}`;
+
 btn.addEventListener('click', function () {
     const input = document.querySelector(".input").value;
+
     if (input == computerNum) {
         h1.innerHTML = `You Guessed Right Number,Your number is ${computerNum}`;
-    }
-    else if (input < computerNum) {
-        h1.innerHTML = "You Guess Too Lower!!😃"
+        cs = cs + 5
+        currntScore.innerHTML = `Current Score:${cs}`;
+        HighScore.innerHTML = `High Score:${cs}`;
 
     }
-    if (input > computerNum) {
-        h1.innerHTML = "You Guess Too Higher!!😃"
+    else if (input < computerNum && cs > 0) {
+        h1.innerHTML = "You Guess Too Lower!!😃"
+
+        cs = cs - 5;
+        currntScore.innerHTML = `Current Score:${cs}`;
+
+
+
     }
+    else if (input > computerNum && cs > 0) {
+        h1.innerHTML = "You Guess Too Higher!!😃"
+        cs = cs - 5;
+        currntScore.innerHTML = `Current Score:${cs}`;
+
+    }
+    // if (input !== isNaN(computerNum)) {
+    //     h1.innerHTML = "Please enter number"
+    // }
+    if (cs == 0) {
+        h1.innerHTML = "Opps you lose game"
+    }
+
 });
 
 const btn2 = document.querySelector(".btn2")
@@ -38,21 +65,36 @@ function myBtn() {
     location.reload();
 }
 
-const cs = '50'
-const currntScore = document.querySelector('.cs');
+// const cs = '50'
+// const currntScore = document.querySelector('.cs');
 
-currntScore.innerHTML = `Current Score:${cs}`
+// currntScore.innerHTML = `Current Score:${cs}`;
 
-btn.addEventListener("click", function () {
-    const input = document.querySelector(".input")
-    if (input != computerNum) {
-        currntScore.innerHTML = `current score:${cs - 5}`
-    }
 
-})
+// btn.addEventListener("click", function () {
+//     const input = document.querySelector(".input").value;
+//     if (input !== computerNum) {
+//         currntScore.innerHTML = `Current Score:${cs - 5}`;
+//     }
 
-higher
+    // if (input !== computerNum) {
+    //     const js = cs + 5;
+    //     currntScore.innerHTML = `Current Score:${cs}`
+    // }
 
+// })
+
+// btn.addEventListener("click", function () {
+//     const input = document.querySelector(".input")
+//     if (input !== computerNum) {
+//         cs = cs - 5;
+//         currntScore.innerHTML = `Current Score:${js}`
+//     }
+//     if (input == computerNum) {
+//         const js = cs + 5;
+//         currntScore.innerHTML = `Current Score:${js}`
+//     }
+// })
 
 
 
