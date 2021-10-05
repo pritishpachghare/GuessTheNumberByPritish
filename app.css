@@ -50,8 +50,7 @@ img{
     height: 550px;
     width: 550px;
     margin-left:350px;
-    margin-top:20px;
-    margin-bottom: 20px;
+   
     display: flex;
     flex-direction: column;
     text-align: center;
