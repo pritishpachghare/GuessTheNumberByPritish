@@ -47,7 +47,7 @@ btn.addEventListener('click', function () {
     //     h1.innerHTML = "Please enter number"
     // }
     if (cs == 0) {
-        h1.innerHTML = "Opps you lose game"
+        h1.innerHTML = "Oop!! You lose the game,Reset to try again"
     }
 
 });
